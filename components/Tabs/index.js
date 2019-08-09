@@ -32,9 +32,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
   });
 
 
-// const topicsArray = Array.from(topics.children);
-// console.log(topicsArray)
-
 topics.addEventListener('click', function (event) {
   let name = event.target.classList[1];
   name = name.split('.')[0];
@@ -53,10 +50,9 @@ topics.addEventListener('click', function (event) {
         cardsCont.innerHTML = '';
         for (let i = 0; i < res.length; i++) {
           card(res[i]);
-          console.log(res[i]);
+          // console.log(res[i]);
         }
       }
-
     })
     .catch(err => console.log(`Something went wrong, ${err}`));
 });

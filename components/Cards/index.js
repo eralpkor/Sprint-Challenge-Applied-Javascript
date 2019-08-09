@@ -57,7 +57,7 @@ function card(article) {
 // get data and run component function
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
-    console.log(response)
+    // console.log(response)
     for (const [key, value] of Object.entries(response.data.articles)) {
       value.forEach(val => {
         card(val)

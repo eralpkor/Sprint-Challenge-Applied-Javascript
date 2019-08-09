@@ -35,21 +35,48 @@ function carousel(params) {
   const img4 = document.createElement('img');
   img4.src = "./assets/carousel/turntable.jpeg";
 
-  const imgArr = []
+  let currentIndex = 0;
+  const imgArr = [img1, img2, img3, img4];
 
   const rightButton = document.createElement('div');
   rightButton.classList.add('right-button');
 
-  carouselDiv.append(leftButton, img1, img2, img3, img4, rightButton);
+  carouselDiv.append(leftButton, rightButton);
 
-  // leftButton.addEventListener('click', function () {
+  for (let i = 0; i < imgArr.length; i++) {
+    carouselDiv.append(imgArr[i]);
+  }
 
-  // });
+  img1.style.display = 'block';
 
-  // rightButton.addEventListener('click', function () {
+  rightButton.addEventListener('click', function () {
+    let oldImg = imgArr[currentIndex];
+    oldImg.style.display = 'none';
+    if (currentIndex < imgArr.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    let newImg = imgArr[currentIndex];
+    newImg.style.display = 'block';
+  });
 
-  // });
+  leftButton.addEventListener('click', function () {
+    let oldImg = imgArr[currentIndex];
+    oldImg.style.display = 'none';
+    if (currentIndex === 0) {
+      currentIndex = imgArr.length - 1;
+    } else {
+      currentIndex--;
+    }
+    let newImg = imgArr[currentIndex];
+    newImg.style.display = 'block';
+  });
 
   carouselContainer.appendChild(carouselDiv);
+
   return carouselDiv;
+
 }
+
+carousel();
