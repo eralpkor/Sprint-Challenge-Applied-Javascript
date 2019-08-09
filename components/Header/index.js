@@ -33,8 +33,8 @@ function Header() {
 
   date.textContent = month;
   h1.textContent = 'Lambda Times';
-  // const symbol = '\00B0';
-  temp.textContent = `98`;
+  const symbol = '°';
+  temp.textContent = `98${symbol}`;
 
   return header;
 }
