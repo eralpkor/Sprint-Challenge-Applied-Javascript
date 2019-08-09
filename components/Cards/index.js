@@ -54,46 +54,13 @@ function card(article) {
 
 }
 
-// var result = [];
-// var classes = [];
-
+// get data and run component function
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-
-  // .then(res => {
-  //   result = Object.entries(res.data.articles);
-  //   // console.log(res.data.articles)
-  //   var articles = result.map(function (val) {
-  //     return val;
-  //   });
-  //   console.log(articles)
-  //   articles.map(function(val) {
-
-  //   })
-  // })
   .then(response => {
     for (const [key, value] of Object.entries(response.data.articles)) {
-      console.log(key, value);
       value.forEach(val => {
         card(val)
       })
     }
   })
-
-
-
-// .then(res => res.data.articles.json())
-
-// .then(response => {
-//   response.json();
-//   console.log(response.data.articles)
-//   // var tech = response.data.articles.map(function (tech) {
-//   //   console.log(tech.javascript)
-//   // })
-
-
-//   // var author = tech.map(function (val) {
-//   //   return val;
-//   // });
-
-//   // console.log(author)
-// })
+  .catch(err => console.log(`Something went wrong, ${err}`));
