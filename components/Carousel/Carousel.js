@@ -17,6 +17,7 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carouselContainer = document.querySelector('.carousel-container');
 
 function carousel(params) {
   const carouselDiv = document.createElement('div');
@@ -34,8 +35,21 @@ function carousel(params) {
   const img4 = document.createElement('img');
   img4.src = "./assets/carousel/turntable.jpeg";
 
+  const imgArr = []
+
   const rightButton = document.createElement('div');
   rightButton.classList.add('right-button');
 
   carouselDiv.append(leftButton, img1, img2, img3, img4, rightButton);
+
+  // leftButton.addEventListener('click', function () {
+
+  // });
+
+  // rightButton.addEventListener('click', function () {
+
+  // });
+
+  carouselContainer.appendChild(carouselDiv);
+  return carouselDiv;
 }
