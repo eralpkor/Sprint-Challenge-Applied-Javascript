@@ -14,15 +14,17 @@ function tabComponent(topic) {
   const tab = document.createElement('div');
   tab.classList.add('tab');
   tab.textContent = topic;
+
+  return tab;
 }
 
-var data = axios.get('https://lambda-times-backend.herokuapp.com/topics')
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then((res) => {
     console.log(res.data.topics);
-    let result = res.data.topics.map(val => {
-
+    res.data.topics.map(val => {
+      topics.appendChild(tabComponent(val));
     });
   })
   .catch(error => {
     console.log('Sorry something went wrong ', error);
-  })
+  });
