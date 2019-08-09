@@ -8,8 +8,8 @@
 //
 // <div class="card">
 //   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
+//   <div class="author"> //
+//     <div class="img-container"> //
 //       <img src={url of authors image} />
 //     </div>
 //     <span>By {authors name}</span>
@@ -26,7 +26,18 @@ function card(article) {
   const headline = document.createElement('div');
   headline.classList.add('headline');
   const author = document.createElement('div');
-  card.append();
+  author.classList.add('author');
+  // append to card element
+  card.append(headline, author);
+
+  const imgContainer = document.createElement('div');
+  imgContainer.classList.add('img-container');
+  const images = document.createElement('img');
+  imgContainer.appendChild(images);
+  const span = document.createElement('span');
+  span.textContent = `By `;
+
+  author.append(imgContainer, span);
 
 }
 
