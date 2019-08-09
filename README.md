@@ -30,13 +30,26 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+* Document Object Model: is an interface to web pages, API to the page. Allowing programs to read, write, manipulate the page's content.
+
 2. What is an event?
+
+* Events are actions that take place in the browser that can be initiated by either the user or the browser itself. An event handler is a JavaScript function that runs when an event fires.
 
 3. What is an event listener?
 
+* An event listener attaches a responsive interface to an element, which allows that particular element to wait and listen for the given event to fire.
+
 4. Why would we convert a NodeList into an Array?
 
+* The querySelectorAll method returns an array-like object called a node list. These data structures are referred to as “Array-like”, because they appear as an array, but can not be used with array methods like map and forEach.
+* One of the many ways to convert this array-like object to an array is:
+`var nodeList = document.querySelectorAll('div');`
+` [...nodeList].forEach( {// do something})`
+
 5. What is a component?
+
+* Web components are custom made code block and encapsulate logic and UI into one.
 
 ### Git Set up
 
