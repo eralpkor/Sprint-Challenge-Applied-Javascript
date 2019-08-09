@@ -9,6 +9,14 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
+var date = new Date(); // 2009-11-10
+var month = date.toLocaleString('default', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+console.log(month);
+
 const headerContainer = document.querySelector('.header-container');
 
 function Header() {
@@ -23,11 +31,17 @@ function Header() {
 
   header.append(date, h1, temp);
 
-  date.textContent = 'July, 13 2019';
+  date.textContent = month;
   h1.textContent = 'Lambda Times';
-  temp.textContent = '98';
+  // const symbol = '\00B0';
+  temp.textContent = `98`;
 
   return header;
 }
 
 headerContainer.appendChild(Header());
+
+function temp(val) {
+  val = parseFloat(val);
+  return (val - 273.15) / 1.8;
+}
